@@ -50,7 +50,7 @@ class NetworkWorker: NSObject {
             if let error = error {
                 print("Error ", error.localizedDescription)
             } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                self?.updateModels(withData: data)
+                self?.parseResponse(withData: data)
                 
                 DispatchQueue.main.async {
                     completion(self?.parsedEntries)
@@ -63,7 +63,7 @@ class NetworkWorker: NSObject {
     
     // MARK: - Private Methods
     //
-    private func updateModels(withData data: Data) {
+    private func parseResponse(withData data: Data) {
         var response: JSONDictionary?
         
         do {

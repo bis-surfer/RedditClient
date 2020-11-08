@@ -31,17 +31,17 @@ class EntriesPresenter: NSObject {
     
     // MARK: - Public Methods
     //
+    func present() {
+        entriesCollection = interactor.entriesCollection
+        
+        viewController?.reload()
+    }
+    
     func entriesCount() -> Int {
         return entriesCollection?.entriesCount() ?? 0
     }
     
     func entry(atIndex entryIndex: Int) -> Entry? {
         return entriesCollection?.entry(atIndex: entryIndex)
-    }
-    
-    func present() {
-        entriesCollection = interactor.entriesCollection
-        
-        viewController?.reload()
     }
 }

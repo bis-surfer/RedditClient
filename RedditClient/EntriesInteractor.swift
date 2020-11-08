@@ -11,25 +11,16 @@ class EntriesInteractor: NSObject {
 
     // MARK: - Constants
     //
-    private let defaultUrl = "https://www.reddit.com/top.json"
+    private let topEntriesUrl = "https://www.reddit.com/top.json"
     
     // MARK: - Public Properties
     //
     weak var presenter: EntriesPresenter!
-    
     var entriesCollection: EntriesCollection?
     
     // MARK: - Private Properties
     //
     var networkWorker: NetworkWorker?
-    
-    // MARK: - Life cycle
-    //
-    /*
-    init() {
-        entriesCollection = EntriesCollection()
-    }
-     */
     
     // MARK: - Public Methods
     //
@@ -39,7 +30,7 @@ class EntriesInteractor: NSObject {
             networkWorker = NetworkWorker(withInteractor: self)
         }
         
-        networkWorker?.performGetRequest(withURLString: defaultUrl, completion: { [weak self] entries in
+        networkWorker?.performGetRequest(withURLString: topEntriesUrl, completion: { [weak self] entries in
             
             self?.entriesCollection = EntriesCollection(withEntries: entries)
             
