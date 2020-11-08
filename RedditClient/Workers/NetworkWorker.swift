@@ -89,13 +89,15 @@ class NetworkWorker: NSObject {
         for entryData in entriesData {
             guard let entryData = entryData as? JSONDictionary,
                let entryDictionary = entryData["data"] as? JSONDictionary,
-               let title = entryDictionary["title"] as? String else {
+               let title = entryDictionary["title"] as? String,
+               let author = entryDictionary["author"] as? String,
+               let commentsCount = entryDictionary["num_comments"] as? Int else {
                 
                 print("Problem parsing entryDictionary")
                 continue
             }
             
-            parsedEntries?.append(Entry(withTitle: title))
+            parsedEntries?.append(Entry(withTitle: title, author: author, commentsCount: commentsCount, thumbnailUrl: nil))
         }
     }
     

@@ -23,7 +23,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7p4-LE-j0R">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <inset key="separatorInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="EntryTableViewCell" id="CNz-Em-hsI" customClass="EntryTableViewCell" customModule="RedditClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="64"/>
@@ -32,16 +32,59 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entry Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xs2-wE-kyk">
-                                                    <rect key="frame" x="12" y="4" width="390" height="56"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1xD-ee-gSJ">
+                                                    <rect key="frame" x="8" y="4" width="56" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1xD-ee-gSJ" secondAttribute="height" multiplier="1:1" id="V5A-gc-tkv"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xs2-wE-kyk">
+                                                    <rect key="frame" x="72" y="4" width="334" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="d7x-77-fcc"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lud-Ze-S2C">
+                                                    <rect key="frame" x="72" y="44" width="127" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="JIk-Zs-hvi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Umq-3M-5gP">
+                                                    <rect key="frame" x="207" y="44" width="199" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xs2-wE-kyk" firstAttribute="top" secondItem="Xcs-aq-3gz" secondAttribute="top" constant="4" id="1iH-6z-gLW"/>
+                                                <constraint firstItem="1xD-ee-gSJ" firstAttribute="leading" secondItem="Xcs-aq-3gz" secondAttribute="leading" constant="8" id="8A4-M5-Cqh"/>
+                                                <constraint firstItem="Umq-3M-5gP" firstAttribute="centerY" secondItem="lud-Ze-S2C" secondAttribute="centerY" id="8hP-MG-Ekk"/>
+                                                <constraint firstItem="Umq-3M-5gP" firstAttribute="bottom" secondItem="lud-Ze-S2C" secondAttribute="bottom" id="969-zb-WXc"/>
+                                                <constraint firstItem="lud-Ze-S2C" firstAttribute="leading" secondItem="xs2-wE-kyk" secondAttribute="leading" id="AHA-tC-j6w"/>
+                                                <constraint firstItem="xs2-wE-kyk" firstAttribute="bottom" secondItem="lud-Ze-S2C" secondAttribute="top" id="MVl-Nx-ffO"/>
+                                                <constraint firstAttribute="bottom" secondItem="1xD-ee-gSJ" secondAttribute="bottom" constant="4" id="QbA-ue-TdI"/>
+                                                <constraint firstItem="Umq-3M-5gP" firstAttribute="leading" secondItem="Xcs-aq-3gz" secondAttribute="centerX" id="SRu-7T-pcM"/>
+                                                <constraint firstItem="Umq-3M-5gP" firstAttribute="trailing" secondItem="xs2-wE-kyk" secondAttribute="trailing" id="Ybe-nv-fuL"/>
+                                                <constraint firstAttribute="trailing" secondItem="xs2-wE-kyk" secondAttribute="trailing" constant="8" id="bU7-9i-CDu"/>
+                                                <constraint firstItem="Umq-3M-5gP" firstAttribute="leading" secondItem="lud-Ze-S2C" secondAttribute="trailing" constant="8" id="cgK-yy-h24"/>
+                                                <constraint firstAttribute="trailing" secondItem="Umq-3M-5gP" secondAttribute="trailing" constant="8" id="fAS-5y-2xY"/>
+                                                <constraint firstItem="Umq-3M-5gP" firstAttribute="top" secondItem="lud-Ze-S2C" secondAttribute="top" id="fAf-zP-oYb"/>
+                                                <constraint firstItem="1xD-ee-gSJ" firstAttribute="top" secondItem="Xcs-aq-3gz" secondAttribute="top" constant="4" id="ny5-pw-mbP"/>
+                                                <constraint firstItem="xs2-wE-kyk" firstAttribute="leading" secondItem="1xD-ee-gSJ" secondAttribute="trailing" constant="8" id="zGx-R3-hQa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="authorLabel" destination="lud-Ze-S2C" id="bEV-7N-D7O"/>
+                                            <outlet property="commentsCountLabel" destination="Umq-3M-5gP" id="eW2-Qk-plN"/>
+                                            <outlet property="thumbnailImageView" destination="1xD-ee-gSJ" id="qpf-DN-nRw"/>
                                             <outlet property="titleLabel" destination="xs2-wE-kyk" id="aw5-8W-WX1"/>
                                         </connections>
                                     </tableViewCell>
@@ -70,8 +113,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
