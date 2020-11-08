@@ -7,8 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntriesViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet private weak var entriesTableView: UITableView!
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
