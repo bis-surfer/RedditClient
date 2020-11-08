@@ -11,6 +11,7 @@ class EntriesViewController: UIViewController {
 
     // MARK: - Outlets
     //
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var entriesTableView: UITableView!
     
     // MARK: - Public Properties
@@ -29,6 +30,15 @@ class EntriesViewController: UIViewController {
         entriesPresenter = EntriesPresenter(withViewController: self, interactor: entriesInteractor)
         entriesInteractor.presenter = entriesPresenter
         
+        requestEntries()
+    }
+    
+    // MARK: - Private Methods
+    //
+    private func requestEntries() {
+        activityIndicatorView.show()
+        entriesTableView.isHidden = true
+        
         entriesInteractor.requestEntries()
     }
 }
@@ -40,5 +50,8 @@ extension EntriesViewController: EntriesViewReloadable {
     
     func reload() {
         entriesTableView.reloadData()
+        
+        activityIndicatorView.hide()
+        entriesTableView.isHidden = false
     }
 }
