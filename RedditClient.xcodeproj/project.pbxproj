@@ -19,6 +19,7 @@
 		094160C125589FF900E94FF7 /* ImageRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160C025589FF900E94FF7 /* ImageRecord.swift */; };
 		094160C42558A01600E94FF7 /* ImageDownloadingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160C32558A01600E94FF7 /* ImageDownloadingOperation.swift */; };
 		094160C72558A10000E94FF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160C62558A10000E94FF7 /* Constants.swift */; };
+		094160CC2559F41400E94FF7 /* Raketa Test Assignment.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 094160CB2559F41400E94FF7 /* Raketa Test Assignment.pdf */; };
 		09D4A1192556B03500908BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A1182556B03500908BBC /* AppDelegate.swift */; };
 		09D4A11B2556B03500908BBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A11A2556B03500908BBC /* SceneDelegate.swift */; };
 		09D4A11D2556B03500908BBC /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A11C2556B03500908BBC /* EntriesViewController.swift */; };
@@ -42,6 +43,7 @@
 		094160C025589FF900E94FF7 /* ImageRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecord.swift; sourceTree = "<group>"; };
 		094160C32558A01600E94FF7 /* ImageDownloadingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadingOperation.swift; sourceTree = "<group>"; };
 		094160C62558A10000E94FF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		094160CB2559F41400E94FF7 /* Raketa Test Assignment.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Raketa Test Assignment.pdf"; sourceTree = "<group>"; };
 		09D4A1152556B03500908BBC /* RedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D4A1182556B03500908BBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D4A11A2556B03500908BBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		09D4A10C2556B03500908BBC = {
 			isa = PBXGroup;
 			children = (
+				094160CB2559F41400E94FF7 /* Raketa Test Assignment.pdf */,
 				09D4A1172556B03500908BBC /* RedditClient */,
 				09D4A1162556B03500908BBC /* Products */,
 			);
@@ -201,6 +204,7 @@
 				09D4A1252556B03600908BBC /* LaunchScreen.storyboard in Resources */,
 				09D4A1222556B03600908BBC /* Assets.xcassets in Resources */,
 				09D4A1202556B03500908BBC /* Main.storyboard in Resources */,
+				094160CC2559F41400E94FF7 /* Raketa Test Assignment.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
