@@ -97,7 +97,9 @@ class NetworkWorker: NSObject {
                 continue
             }
             
-            parsedEntries?.append(Entry(withTitle: title, author: author, commentsCount: commentsCount, thumbnailUrl: nil))
+            let thumbnailUrl = entryDictionary["thumbnail"] as? String
+            
+            parsedEntries?.append(Entry(withTitle: title, author: author, commentsCount: commentsCount, thumbnailUrl: thumbnailUrl))
         }
     }
     

@@ -15,6 +15,10 @@
 		094160AF255826C400E94FF7 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160AE255826C400E94FF7 /* NetworkWorker.swift */; };
 		094160B42558394600E94FF7 /* EntriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160B32558394600E94FF7 /* EntriesInteractor.swift */; };
 		094160B8255882A800E94FF7 /* UIActivityIndicatorView+ShowAndHide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160B7255882A800E94FF7 /* UIActivityIndicatorView+ShowAndHide.swift */; };
+		094160BE25589FDE00E94FF7 /* ImagesDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160BD25589FDE00E94FF7 /* ImagesDownloadManager.swift */; };
+		094160C125589FF900E94FF7 /* ImageRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160C025589FF900E94FF7 /* ImageRecord.swift */; };
+		094160C42558A01600E94FF7 /* ImageDownloadingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160C32558A01600E94FF7 /* ImageDownloadingOperation.swift */; };
+		094160C72558A10000E94FF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160C62558A10000E94FF7 /* Constants.swift */; };
 		09D4A1192556B03500908BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A1182556B03500908BBC /* AppDelegate.swift */; };
 		09D4A11B2556B03500908BBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A11A2556B03500908BBC /* SceneDelegate.swift */; };
 		09D4A11D2556B03500908BBC /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A11C2556B03500908BBC /* EntriesViewController.swift */; };
@@ -32,6 +36,10 @@
 		094160AE255826C400E94FF7 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 		094160B32558394600E94FF7 /* EntriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesInteractor.swift; sourceTree = "<group>"; };
 		094160B7255882A800E94FF7 /* UIActivityIndicatorView+ShowAndHide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+ShowAndHide.swift"; sourceTree = "<group>"; };
+		094160BD25589FDE00E94FF7 /* ImagesDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDownloadManager.swift; sourceTree = "<group>"; };
+		094160C025589FF900E94FF7 /* ImageRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecord.swift; sourceTree = "<group>"; };
+		094160C32558A01600E94FF7 /* ImageDownloadingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadingOperation.swift; sourceTree = "<group>"; };
+		094160C62558A10000E94FF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		09D4A1152556B03500908BBC /* RedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D4A1182556B03500908BBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D4A11A2556B03500908BBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				094160AE255826C400E94FF7 /* NetworkWorker.swift */,
+				094160BC25589F8D00E94FF7 /* ImagesDownload */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -76,6 +85,16 @@
 				094160B7255882A800E94FF7 /* UIActivityIndicatorView+ShowAndHide.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		094160BC25589F8D00E94FF7 /* ImagesDownload */ = {
+			isa = PBXGroup;
+			children = (
+				094160BD25589FDE00E94FF7 /* ImagesDownloadManager.swift */,
+				094160C025589FF900E94FF7 /* ImageRecord.swift */,
+				094160C32558A01600E94FF7 /* ImageDownloadingOperation.swift */,
+			);
+			path = ImagesDownload;
 			sourceTree = "<group>";
 		};
 		09D4A10C2556B03500908BBC = {
@@ -97,6 +116,7 @@
 		09D4A1172556B03500908BBC /* RedditClient */ = {
 			isa = PBXGroup;
 			children = (
+				094160C62558A10000E94FF7 /* Constants.swift */,
 				094160842556F56900E94FF7 /* Models */,
 				094160A325574F8300E94FF7 /* Workers */,
 				09D4A1182556B03500908BBC /* AppDelegate.swift */,
@@ -190,8 +210,12 @@
 				094160822556F52B00E94FF7 /* EntryTableViewCell.swift in Sources */,
 				094160B8255882A800E94FF7 /* UIActivityIndicatorView+ShowAndHide.swift in Sources */,
 				094160A82557533800E94FF7 /* EntriesPresenter.swift in Sources */,
+				094160C72558A10000E94FF7 /* Constants.swift in Sources */,
 				09D4A11D2556B03500908BBC /* EntriesViewController.swift in Sources */,
+				094160C42558A01600E94FF7 /* ImageDownloadingOperation.swift in Sources */,
 				094160AF255826C400E94FF7 /* NetworkWorker.swift in Sources */,
+				094160C125589FF900E94FF7 /* ImageRecord.swift in Sources */,
+				094160BE25589FDE00E94FF7 /* ImagesDownloadManager.swift in Sources */,
 				09D4A1192556B03500908BBC /* AppDelegate.swift in Sources */,
 				094160A025571DFF00E94FF7 /* EntriesCollection.swift in Sources */,
 				09D4A11B2556B03500908BBC /* SceneDelegate.swift in Sources */,

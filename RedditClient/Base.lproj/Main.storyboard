@@ -38,6 +38,10 @@
                                                         <constraint firstAttribute="width" secondItem="1xD-ee-gSJ" secondAttribute="height" multiplier="1:1" id="V5A-gc-tkv"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="x37-zw-rJS">
+                                                    <rect key="frame" x="26" y="22" width="20" height="20"/>
+                                                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xs2-wE-kyk">
                                                     <rect key="frame" x="72" y="4" width="334" height="40"/>
                                                     <constraints>
@@ -68,9 +72,11 @@
                                                 <constraint firstItem="1xD-ee-gSJ" firstAttribute="leading" secondItem="Xcs-aq-3gz" secondAttribute="leading" constant="8" id="8A4-M5-Cqh"/>
                                                 <constraint firstItem="Umq-3M-5gP" firstAttribute="centerY" secondItem="lud-Ze-S2C" secondAttribute="centerY" id="8hP-MG-Ekk"/>
                                                 <constraint firstItem="Umq-3M-5gP" firstAttribute="bottom" secondItem="lud-Ze-S2C" secondAttribute="bottom" id="969-zb-WXc"/>
+                                                <constraint firstItem="x37-zw-rJS" firstAttribute="centerX" secondItem="1xD-ee-gSJ" secondAttribute="centerX" id="9Xz-Fg-UNB"/>
                                                 <constraint firstItem="lud-Ze-S2C" firstAttribute="leading" secondItem="xs2-wE-kyk" secondAttribute="leading" id="AHA-tC-j6w"/>
                                                 <constraint firstItem="xs2-wE-kyk" firstAttribute="bottom" secondItem="lud-Ze-S2C" secondAttribute="top" id="MVl-Nx-ffO"/>
                                                 <constraint firstAttribute="bottom" secondItem="1xD-ee-gSJ" secondAttribute="bottom" constant="4" id="QbA-ue-TdI"/>
+                                                <constraint firstItem="x37-zw-rJS" firstAttribute="centerY" secondItem="1xD-ee-gSJ" secondAttribute="centerY" id="R1Y-PI-4Fe"/>
                                                 <constraint firstItem="Umq-3M-5gP" firstAttribute="leading" secondItem="Xcs-aq-3gz" secondAttribute="centerX" id="SRu-7T-pcM"/>
                                                 <constraint firstItem="Umq-3M-5gP" firstAttribute="trailing" secondItem="xs2-wE-kyk" secondAttribute="trailing" id="Ybe-nv-fuL"/>
                                                 <constraint firstAttribute="trailing" secondItem="xs2-wE-kyk" secondAttribute="trailing" constant="8" id="bU7-9i-CDu"/>
@@ -82,6 +88,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicatorView" destination="x37-zw-rJS" id="NaF-8P-Bnq"/>
                                             <outlet property="authorLabel" destination="lud-Ze-S2C" id="bEV-7N-D7O"/>
                                             <outlet property="commentsCountLabel" destination="Umq-3M-5gP" id="eW2-Qk-plN"/>
                                             <outlet property="thumbnailImageView" destination="1xD-ee-gSJ" id="qpf-DN-nRw"/>

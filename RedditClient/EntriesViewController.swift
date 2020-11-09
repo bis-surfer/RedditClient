@@ -12,7 +12,7 @@ class EntriesViewController: UIViewController {
     // MARK: - Outlets
     //
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
-    @IBOutlet private weak var entriesTableView: UITableView!
+    @IBOutlet weak var entriesTableView: UITableView!
     
     // MARK: - Public Properties
     //

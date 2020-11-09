@@ -14,15 +14,33 @@ class EntryTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var commentsCountLabel: UILabel!
-    @IBOutlet private weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
     // MARK: - Life cycle
     //
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        titleLabel.text = nil
+        authorLabel.text = nil
+        commentsCountLabel.text = nil
+        thumbnailImageView.image = nil
+        thumbnailImageView.isHidden = false
+        activityIndicatorView.hide()
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        titleLabel.text = nil
+        authorLabel.text = nil
+        commentsCountLabel.text = nil
+        thumbnailImageView.image = nil
+        thumbnailImageView.isHidden = false
+        activityIndicatorView.hide()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -41,5 +59,16 @@ class EntryTableViewCell: UITableViewCell {
         }
         commentsCountLabel.text = commentsCountString
     }
-
+    
+    func showImagePlaceholderView() {
+        
+        thumbnailImageView.isHidden = false
+        activityIndicatorView.show()
+    }
+    
+    func hideImagePlaceholderView() {
+        
+        thumbnailImageView.isHidden = true
+        activityIndicatorView.hide()
+    }
 }

@@ -9,10 +9,6 @@ import UIKit
 
 class EntriesInteractor: NSObject {
 
-    // MARK: - Constants
-    //
-    private let topEntriesUrl = "https://www.reddit.com/top.json"
-    
     // MARK: - Public Properties
     //
     weak var presenter: EntriesPresenter!
@@ -30,7 +26,7 @@ class EntriesInteractor: NSObject {
             networkWorker = NetworkWorker(withInteractor: self)
         }
         
-        networkWorker?.performGetRequest(withURLString: topEntriesUrl, completion: { [weak self] entries in
+        networkWorker?.performGetRequest(withURLString: Constants.kTopEntriesUrl, completion: { [weak self] entries in
             
             self?.entriesCollection = EntriesCollection(withEntries: entries)
             
