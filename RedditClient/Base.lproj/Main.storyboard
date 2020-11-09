@@ -68,7 +68,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-Lo-Jwr">
-                                                    <rect key="frame" x="72" y="44" width="127" height="16"/>
+                                                    <rect key="frame" x="72" y="44" width="163" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="xfC-Wu-5KY"/>
                                                     </constraints>
@@ -76,8 +76,8 @@
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="adK-Mx-byt">
-                                                    <rect key="frame" x="207" y="44" width="199" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 comment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="adK-Mx-byt">
+                                                    <rect key="frame" x="243" y="44" width="163" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="tertiaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
                                             <constraints>
                                                 <constraint firstItem="k8m-Lo-Jwr" firstAttribute="leading" secondItem="X0L-AF-wiO" secondAttribute="leading" id="1zd-Ld-t0c"/>
                                                 <constraint firstItem="adK-Mx-byt" firstAttribute="leading" secondItem="k8m-Lo-Jwr" secondAttribute="trailing" constant="8" id="4aM-V8-XF2"/>
-                                                <constraint firstItem="adK-Mx-byt" firstAttribute="leading" secondItem="whd-RG-TgG" secondAttribute="centerX" id="4zc-eI-MXW"/>
+                                                <constraint firstItem="adK-Mx-byt" firstAttribute="leading" secondItem="whd-RG-TgG" secondAttribute="centerX" constant="36" id="4zc-eI-MXW"/>
                                                 <constraint firstItem="X0L-AF-wiO" firstAttribute="top" secondItem="whd-RG-TgG" secondAttribute="top" constant="4" id="8Th-ZW-zZM"/>
                                                 <constraint firstAttribute="bottom" secondItem="FMo-Zs-VB6" secondAttribute="bottom" constant="4" id="9Bj-To-AGJ"/>
                                                 <constraint firstItem="X0L-AF-wiO" firstAttribute="bottom" secondItem="k8m-Lo-Jwr" secondAttribute="top" id="Bnn-rp-y7L"/>
