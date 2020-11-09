@@ -50,6 +50,7 @@ class EntryTableViewCell: UITableViewCell {
     // MARK: - Public Methods
     //
     func configure(withEntry entry: Entry) {
+        
         titleLabel.text = entry.title
         authorLabel.text = entry.author
         
@@ -62,13 +63,13 @@ class EntryTableViewCell: UITableViewCell {
     
     func showImagePlaceholderView() {
         
-        thumbnailImageView.isHidden = false
+        thumbnailImageView.isHidden = true
         activityIndicatorView.show()
     }
     
     func hideImagePlaceholderView() {
         
-        thumbnailImageView.isHidden = true
+        thumbnailImageView.isHidden = false
         activityIndicatorView.hide()
     }
 }
