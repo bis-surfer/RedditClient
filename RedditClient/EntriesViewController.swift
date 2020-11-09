@@ -53,6 +53,7 @@ class EntriesViewController: UIViewController {
     // MARK: - Private Methods
     //
     private func requestEntries() {
+        
         activityIndicatorView.show()
         entriesTableView.isHidden = true
         
@@ -66,6 +67,7 @@ class EntriesViewController: UIViewController {
 extension EntriesViewController: EntriesViewReloadable {
     
     func reload() {
+        
         entriesTableView.reloadData()
         
         activityIndicatorView.hide()

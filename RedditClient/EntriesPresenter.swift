@@ -25,6 +25,7 @@ class EntriesPresenter: NSObject {
     // MARK: - Life cycle
     //
     init(withViewController viewController: EntriesViewReloadable, interactor: EntriesInteractor) {
+        
         self.viewController = viewController
         self.interactor = interactor
     }
@@ -32,6 +33,7 @@ class EntriesPresenter: NSObject {
     // MARK: - Public Methods
     //
     func present() {
+        
         entriesCollection = interactor.entriesCollection
         
         viewController?.reload()

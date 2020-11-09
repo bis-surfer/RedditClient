@@ -16,6 +16,7 @@ class EntriesCollection: NSObject {
     // MARK: - Life cycle
     //
     init(withEntries entries: [Entry]?) {
+        
         self.entries = entries ?? []
     }
     
