@@ -25,6 +25,8 @@
 		09D4A1202556B03500908BBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D4A11E2556B03500908BBC /* Main.storyboard */; };
 		09D4A1222556B03600908BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D4A1212556B03600908BBC /* Assets.xcassets */; };
 		09D4A1252556B03600908BBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D4A1232556B03600908BBC /* LaunchScreen.storyboard */; };
+		43006D6E2559D13700B6A748 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43006D6D2559D13700B6A748 /* DetailViewController.swift */; };
+		43006D712559D3D400B6A748 /* EntriesViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43006D702559D3D400B6A748 /* EntriesViewController+UITableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		09D4A1212556B03600908BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D4A1242556B03600908BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09D4A1262556B03600908BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43006D6D2559D13700B6A748 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		43006D702559D3D400B6A748 /* EntriesViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntriesViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,9 @@
 				09D4A11A2556B03500908BBC /* SceneDelegate.swift */,
 				09D4A11C2556B03500908BBC /* EntriesViewController.swift */,
 				0941609B255715E900E94FF7 /* EntriesViewController+UITableViewDataSource.swift */,
+				43006D702559D3D400B6A748 /* EntriesViewController+UITableViewDelegate.swift */,
 				094160812556F52B00E94FF7 /* EntryTableViewCell.swift */,
+				43006D6D2559D13700B6A748 /* DetailViewController.swift */,
 				094160B32558394600E94FF7 /* EntriesInteractor.swift */,
 				094160A72557533800E94FF7 /* EntriesPresenter.swift */,
 				094160B62558827900E94FF7 /* Extensions */,
@@ -212,6 +218,7 @@
 				094160A82557533800E94FF7 /* EntriesPresenter.swift in Sources */,
 				094160C72558A10000E94FF7 /* Constants.swift in Sources */,
 				09D4A11D2556B03500908BBC /* EntriesViewController.swift in Sources */,
+				43006D6E2559D13700B6A748 /* DetailViewController.swift in Sources */,
 				094160C42558A01600E94FF7 /* ImageDownloadingOperation.swift in Sources */,
 				094160AF255826C400E94FF7 /* NetworkWorker.swift in Sources */,
 				094160C125589FF900E94FF7 /* ImageRecord.swift in Sources */,
@@ -219,6 +226,7 @@
 				09D4A1192556B03500908BBC /* AppDelegate.swift in Sources */,
 				094160A025571DFF00E94FF7 /* EntriesCollection.swift in Sources */,
 				09D4A11B2556B03500908BBC /* SceneDelegate.swift in Sources */,
+				43006D712559D3D400B6A748 /* EntriesViewController+UITableViewDelegate.swift in Sources */,
 				094160B42558394600E94FF7 /* EntriesInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

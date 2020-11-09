@@ -18,6 +18,7 @@ class EntriesViewController: UIViewController {
     //
     var entriesInteractor: EntriesInteractor!
     var entriesPresenter: EntriesPresenter!
+    var selectedEntry: Entry?
     
     // MARK: - Life cycle
     //
@@ -25,12 +26,28 @@ class EntriesViewController: UIViewController {
         super.viewDidLoad()
         
         entriesTableView.dataSource = self
+        entriesTableView.delegate = self
         
         entriesInteractor = EntriesInteractor()
         entriesPresenter = EntriesPresenter(withViewController: self, interactor: entriesInteractor)
         entriesInteractor.presenter = entriesPresenter
         
         requestEntries()
+    }
+    
+    // MARK: - Navigation
+    //
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Get the new view controller using segue.destination.
+        guard let detailViewController: DetailViewController = segue.destination as? DetailViewController else {
+            
+            return
+        }
+        
+        // Pass the selected object to the new view controller.
+        detailViewController.entry = selectedEntry
     }
     
     // MARK: - Private Methods
