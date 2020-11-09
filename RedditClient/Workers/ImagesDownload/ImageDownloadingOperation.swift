@@ -22,11 +22,17 @@ class ImageDownloadingOperation: Operation {
             return
         }
         
+        guard imageRecord.name != "default" else {
+            return
+        }
+        
         let imageURL: URL = imageRecord.url
         
         imageRecord.state = .downloading
         
         guard let imageData: Data = try? Data(contentsOf: imageURL) else {
+            
+            imageRecord.state = .failed
             return
         }
         

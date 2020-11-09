@@ -88,6 +88,10 @@ class ImagesDownloadManager: NSObject {
         }
         else {
             
+            guard imageUrl != "default" else {
+                return
+            }
+            
             imageRecord = ImageRecord(withImageUrl: imageUrl)
             
             showPlaceholderBlock()
