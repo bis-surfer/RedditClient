@@ -144,6 +144,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yTW-vI-bSP">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bzf-h2-Vdm">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
@@ -151,15 +155,18 @@
                         <viewLayoutGuide key="safeArea" id="mk7-gq-EQA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yTW-vI-bSP" firstAttribute="centerX" secondItem="2g3-CI-PYU" secondAttribute="centerX" id="Fx3-sN-m0T"/>
                             <constraint firstItem="bzf-h2-Vdm" firstAttribute="top" secondItem="mk7-gq-EQA" secondAttribute="top" id="Ipa-9z-uxj"/>
                             <constraint firstItem="bzf-h2-Vdm" firstAttribute="trailing" secondItem="mk7-gq-EQA" secondAttribute="trailing" id="SDL-RP-nT1"/>
                             <constraint firstItem="bzf-h2-Vdm" firstAttribute="leading" secondItem="mk7-gq-EQA" secondAttribute="leading" id="XdV-rG-gjL"/>
+                            <constraint firstItem="yTW-vI-bSP" firstAttribute="centerY" secondItem="2g3-CI-PYU" secondAttribute="centerY" id="dRZ-VQ-Gz4"/>
                             <constraint firstItem="bzf-h2-Vdm" firstAttribute="bottom" secondItem="mk7-gq-EQA" secondAttribute="bottom" id="f1t-Cx-KeP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tr0-Os-KdK"/>
                     <connections>
-                        <outlet property="imageView" destination="bzf-h2-Vdm" id="rin-CX-YrC"/>
+                        <outlet property="activityIndicatorView" destination="yTW-vI-bSP" id="lyQ-Ft-d1U"/>
+                        <outlet property="pictureView" destination="bzf-h2-Vdm" id="rin-CX-YrC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOI-6Z-hGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

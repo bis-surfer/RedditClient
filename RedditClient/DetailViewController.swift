@@ -11,7 +11,8 @@ class DetailViewController: UIViewController {
 
     // MARK: - Outlets
     //
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var pictureView: UIImageView!
     
     // MARK: - Public Properties
     //
@@ -22,10 +23,33 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let thumbnailUrl = entry?.thumbnailUrl else {
+        setupPicture()
+    }
+}
+
+
+// MARK: - Images Download and Display
+
+extension DetailViewController {
+    
+    func setupPicture() {
+        
+        guard let pictureUrl = entry?.pictureUrl else {
             return
         }
         
-        sharedImagesDownloadManager.setupImageView(imageView, withImageUrl: thumbnailUrl, defaultImage: nil, showPlaceholderBlock: { }, hidePlaceholderBlock: { })
+        sharedImagesDownloadManager.setupImageView(pictureView, withImageUrl: pictureUrl, defaultImage: nil, showPlaceholderBlock: { showImagePlaceholderView() }, hidePlaceholderBlock: { self.hideImagePlaceholderView() })
+    }
+    
+    func showImagePlaceholderView() {
+        
+        pictureView.isHidden = true
+        activityIndicatorView.show()
+    }
+
+    func hideImagePlaceholderView() {
+        
+        pictureView.isHidden = false
+        activityIndicatorView.hide()
     }
 }

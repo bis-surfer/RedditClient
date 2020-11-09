@@ -27,6 +27,7 @@ class NetworkWorker: NSObject {
     // MARK: - Life cycle
     //
     init(withInteractor interactor: EntriesInteractor) {
+        
         self.interactor = interactor
     }
     
@@ -98,8 +99,9 @@ class NetworkWorker: NSObject {
             }
             
             let thumbnailUrl = entryDictionary["thumbnail"] as? String
+            let pictureUrl = entryDictionary["url_overridden_by_dest"] as? String
             
-            parsedEntries?.append(Entry(withTitle: title, author: author, commentsCount: commentsCount, thumbnailUrl: thumbnailUrl))
+            parsedEntries?.append(Entry(withTitle: title, author: author, commentsCount: commentsCount, thumbnailUrl: thumbnailUrl, pictureUrl: pictureUrl))
         }
     }
     
