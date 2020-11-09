@@ -98,10 +98,11 @@ class NetworkWorker: NSObject {
                 continue
             }
             
+            let created_utc_timestamp = entryDictionary["created_utc"] as? Int
             let thumbnailUrl = entryDictionary["thumbnail"] as? String
             let pictureUrl = entryDictionary["url_overridden_by_dest"] as? String
             
-            parsedEntries?.append(Entry(withTitle: title, author: author, commentsCount: commentsCount, thumbnailUrl: thumbnailUrl, pictureUrl: pictureUrl))
+            parsedEntries?.append(Entry(withTitle: title, author: author, created_utc_timestamp: created_utc_timestamp, commentsCount: commentsCount, thumbnailUrl: thumbnailUrl, pictureUrl: pictureUrl))
         }
     }
     

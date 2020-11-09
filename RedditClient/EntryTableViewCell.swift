@@ -52,7 +52,7 @@ class EntryTableViewCell: UITableViewCell {
     func configure(withEntry entry: Entry) {
         
         titleLabel.text = entry.title
-        authorLabel.text = entry.author
+        authorLabel.text = entry.author + entry.creationDateFormatted()
         
         var commentsCountString = "\(entry.commentsCount) comment"
         if entry.commentsCount != 1 {
