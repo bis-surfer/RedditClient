@@ -18,11 +18,12 @@ class NetworkWorker: NSObject {
     private weak var interactor: EntriesInteractor?
     private var dataTask: URLSessionDataTask?
     private var parsedEntries: [Entry]?
+    private var nextSliceAnchorItem: String?
     
     // MARK: - Type Alias
     //
     typealias JSONDictionary = [String: Any]
-    typealias ParsedResponse = ([Entry]?) -> Void
+    typealias ParsedResponse = ([Entry]?, String?) -> Void
     
     // MARK: - Life cycle
     //
@@ -54,7 +55,7 @@ class NetworkWorker: NSObject {
                 self?.parseResponse(withData: data)
                 
                 DispatchQueue.main.async {
-                    completion(self?.parsedEntries)
+                    completion(self?.parsedEntries, self?.nextSliceAnchorItem)
                 }
             }
         })
@@ -76,6 +77,7 @@ class NetworkWorker: NSObject {
         
         // Obtained JSONDictionary; Parsing it
         parsedEntries = []
+        nextSliceAnchorItem = nil
         
         guard let responseData = response!["data"] as? JSONDictionary else {
             print("Dictionary does not contain <data> key")
@@ -104,6 +106,13 @@ class NetworkWorker: NSObject {
             
             parsedEntries?.append(Entry(withTitle: title, author: author, created_utc_timestamp: created_utc_timestamp, commentsCount: commentsCount, thumbnailUrl: thumbnailUrl, pictureUrl: pictureUrl))
         }
+        
+        guard let afterItem = responseData["after"] as? String else {
+            print("data does not contain <after> key")
+            return
+        }
+        
+        nextSliceAnchorItem = afterItem
     }
     
 }

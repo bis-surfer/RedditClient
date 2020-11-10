@@ -13,12 +13,17 @@ class EntriesViewController: UIViewController {
     //
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var entriesTableView: UITableView!
+    @IBOutlet weak var footerView: FooterView!
     
     // MARK: - Public Properties
     //
     var entriesInteractor: EntriesInteractor!
     var entriesPresenter: EntriesPresenter!
     var selectedEntry: Entry?
+    
+    // MARK: - Private Properties
+    //
+    private var isRequestingEntries: Bool = true
     
     // MARK: - Life cycle
     //
@@ -34,7 +39,7 @@ class EntriesViewController: UIViewController {
         
         setupRefreshControl()
         
-        requestEntries(withTableViewHiding: true)
+        requestEntries(fromNextSlice: false, withTableViewHiding: true)
     }
     
     // MARK: - Navigation
@@ -54,14 +59,16 @@ class EntriesViewController: UIViewController {
     
     // MARK: - Private Methods
     //
-    private func requestEntries(withTableViewHiding hideTableView: Bool) {
+    private func requestEntries(fromNextSlice nextSlice: Bool, withTableViewHiding hideTableView: Bool) {
+        
+        isRequestingEntries = true
         
         if hideTableView {
             activityIndicatorView.show()
             entriesTableView.isHidden = true
         }
         
-        entriesInteractor.requestEntries()
+        entriesInteractor.requestEntries(fromNextSlice: nextSlice)
     }
 }
 
@@ -75,7 +82,7 @@ extension EntriesViewController {
     }
     
     @objc private func refresh() {
-        requestEntries(withTableViewHiding: false)
+        requestEntries(fromNextSlice: false, withTableViewHiding: false)
     }
     
     private var refreshControl: UIRefreshControl {
@@ -95,9 +102,25 @@ extension EntriesViewController: EntriesViewReloadable {
     func reload() {
         
         refreshControl.endRefreshing()
+        footerView.showActivityIndicator(false)
         entriesTableView.reloadData()
         
         activityIndicatorView.hide()
         entriesTableView.isHidden = false
+        
+        isRequestingEntries = false
+    }
+}
+
+
+// MARK: - Pagination 
+
+extension EntriesViewController {
+    
+    @IBAction func requestNextEntries() {
+        
+        footerView.showActivityIndicator(true)
+        
+        requestEntries(fromNextSlice: true, withTableViewHiding: false)
     }
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1JG-6G-6Jr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,10 +37,39 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-ut-de6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="16" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-ut-de6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="OdL-1e-WGe" customClass="FooterView" customModule="RedditClient" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="130" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VnA-EH-K10">
+                                            <rect key="frame" x="197" y="12" width="20" height="20"/>
+                                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </activityIndicatorView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjG-xK-C4A">
+                                            <rect key="frame" x="163" y="6" width="88" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Next Entries"/>
+                                            <connections>
+                                                <action selector="requestNextEntries" destination="hBz-qQ-uBV" eventType="touchUpInside" id="LYY-bB-tw3"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="cjG-xK-C4A" firstAttribute="centerY" secondItem="OdL-1e-WGe" secondAttribute="centerY" id="I7E-Wh-dg8"/>
+                                        <constraint firstItem="cjG-xK-C4A" firstAttribute="centerX" secondItem="OdL-1e-WGe" secondAttribute="centerX" id="W9E-YB-S2X"/>
+                                        <constraint firstItem="VnA-EH-K10" firstAttribute="centerY" secondItem="OdL-1e-WGe" secondAttribute="centerY" id="WYx-CM-eGE"/>
+                                        <constraint firstItem="VnA-EH-K10" firstAttribute="centerX" secondItem="OdL-1e-WGe" secondAttribute="centerX" id="lfu-7R-IQt"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="activityIndicatorView" destination="VnA-EH-K10" id="VsZ-XL-u4u"/>
+                                        <outlet property="nextEntriesButton" destination="cjG-xK-C4A" id="oYp-Wu-Q0w"/>
+                                    </connections>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="EntryTableViewCell" id="JDY-eu-fKZ" customClass="EntryTableViewCell" customModule="RedditClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="74"/>
@@ -130,6 +160,7 @@
                     <connections>
                         <outlet property="activityIndicatorView" destination="LpB-cg-lPn" id="rpN-sa-0mr"/>
                         <outlet property="entriesTableView" destination="Yte-ut-de6" id="6cJ-Rj-bOq"/>
+                        <outlet property="footerView" destination="OdL-1e-WGe" id="vbz-T9-KJt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKb-yl-mDA" sceneMemberID="firstResponder"/>

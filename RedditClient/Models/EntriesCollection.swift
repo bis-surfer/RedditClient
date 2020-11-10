@@ -22,6 +22,15 @@ class EntriesCollection: NSObject {
     
     // MARK: - Public Methods
     //
+    func addEntries(_ entries: [Entry]?) {
+        
+        guard let entriesToAdd = entries else {
+            return
+        }
+        
+        self.entries.append(contentsOf: entriesToAdd)
+    }
+    
     func entriesCount() -> Int {
         return entries.count
     }

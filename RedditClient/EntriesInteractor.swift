@@ -16,19 +16,36 @@ class EntriesInteractor: NSObject {
     
     // MARK: - Private Properties
     //
-    var networkWorker: NetworkWorker?
+    private var nextSliceAnchorItem: String?
+    private var networkWorker: NetworkWorker?
     
     // MARK: - Public Methods
     //
-    func requestEntries() {
+    func requestEntries(fromNextSlice nextSlice: Bool) {
         
         if networkWorker == nil {
             networkWorker = NetworkWorker(withInteractor: self)
         }
         
-        networkWorker?.performGetRequest(withURLString: Constants.kTopEntriesUrl, completion: { [weak self] entries in
+        var url = Constants.kTopEntriesUrl
+        if nextSlice {
             
-            self?.entriesCollection = EntriesCollection(withEntries: entries)
+            guard let nextSliceAnchorItem = self.nextSliceAnchorItem else {
+                return
+            }
+            
+            url = url + "?after=\(nextSliceAnchorItem)"
+        }
+        
+        networkWorker?.performGetRequest(withURLString: url, completion: { [weak self] entries, nextSliceAnchorItem in
+            
+            if nextSlice {
+                self?.entriesCollection?.addEntries(entries)
+            } else {
+                self?.entriesCollection = EntriesCollection(withEntries: entries)
+            }
+            
+            self?.nextSliceAnchorItem = nextSliceAnchorItem
             
             self?.presenter.present()
         })
