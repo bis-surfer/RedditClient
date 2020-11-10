@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EntriesInteractor: NSObject {
+class EntriesInteractor: BasicInteractor {
 
     // MARK: - Public Properties
     //

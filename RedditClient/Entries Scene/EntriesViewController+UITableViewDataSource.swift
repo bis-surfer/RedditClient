@@ -43,24 +43,17 @@ extension EntriesViewController {
     
     func setupThumbnail(withURL thumbnailUrl: String?, forCell cell: EntryTableViewCell, atIndexPath indexPath: IndexPath) {
         
-        guard let thumbnailUrl = thumbnailUrl else {
-            return
-        }
-        
-        sharedImagesDownloadManager.setupImageView(cell.thumbnailImageView, withImageUrl: thumbnailUrl, defaultImage: nil, showPlaceholderBlock: { showImagePlaceholderView(forCell: cell, atIndexPath: indexPath) }, hidePlaceholderBlock: { self.hideImagePlaceholderView(forCell: cell, atIndexPath: indexPath) })
+        entriesInteractor.setupImageView(cell.thumbnailImageView, withImageUrl: thumbnailUrl, defaultImage: nil, showPlaceholderBlock: { showImagePlaceholderView(forCell: cell, atIndexPath: indexPath) }, hidePlaceholderBlock: { self.hideImagePlaceholderView(forCell: cell, atIndexPath: indexPath) })
     }
     
     func showImagePlaceholderView(forCell cell: EntryTableViewCell, atIndexPath indexPath: IndexPath) {
-        
+
         cell.showImagePlaceholderView()
-        // entriesTableView.reloadRows(at: [indexPath], with: .none)
-        // entriesTableView.reloadData()
     }
     
     func hideImagePlaceholderView(forCell cell: EntryTableViewCell, atIndexPath indexPath: IndexPath) {
         
         cell.hideImagePlaceholderView()
         entriesTableView.reloadRows(at: [indexPath], with: .none)
-        // entriesTableView.reloadData()
     }
 }

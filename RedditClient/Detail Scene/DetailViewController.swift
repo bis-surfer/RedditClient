@@ -16,12 +16,15 @@ class DetailViewController: UIViewController {
     
     // MARK: - Public Properties
     //
+    var detailInteractor: DetailInteractor!
     var entry: Entry?
     
     // MARK: - Life cycle
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        detailInteractor = DetailInteractor()
         
         setupPicture()
     }
@@ -34,11 +37,7 @@ extension DetailViewController {
     
     func setupPicture() {
         
-        guard let pictureUrl = entry?.pictureUrl else {
-            return
-        }
-        
-        sharedImagesDownloadManager.setupImageView(pictureView, withImageUrl: pictureUrl, defaultImage: nil, showPlaceholderBlock: { showImagePlaceholderView() }, hidePlaceholderBlock: { self.hideImagePlaceholderView() })
+        detailInteractor.setupImageView(pictureView, withImageUrl: entry?.pictureUrl, defaultImage: nil, showPlaceholderBlock: { showImagePlaceholderView() }, hidePlaceholderBlock: { self.hideImagePlaceholderView() })
     }
     
     func showImagePlaceholderView() {
