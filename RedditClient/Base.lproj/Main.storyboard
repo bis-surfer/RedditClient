@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="i2C-8c-ZNh">
             <objects>
-                <navigationController id="1JG-6G-6Jr" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="NavigationController" id="1JG-6G-6Jr" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tPO-P4-9NX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -28,7 +28,7 @@
         <!--Reddit Top Entries-->
         <scene sceneID="m3h-XO-aSU">
             <objects>
-                <viewController id="hBz-qQ-uBV" customClass="EntriesViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="EntriesViewController" id="hBz-qQ-uBV" customClass="EntriesViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L3m-Mn-HGt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +170,7 @@
         <!--Detail View Controller-->
         <scene sceneID="5qR-q4-jwe">
             <objects>
-                <viewController id="oBM-ed-Yd4" customClass="DetailViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DetailViewController" id="oBM-ed-Yd4" customClass="DetailViewController" customModule="RedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2g3-CI-PYU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -33,7 +33,6 @@ extension EntriesViewController: UITableViewDataSource {
         
         return cell
     }
-    
 }
 
 

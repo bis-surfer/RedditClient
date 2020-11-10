@@ -31,6 +31,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
 
+
+// MARK: - State Restoration
+
+extension AppDelegate {
+
+    // For iOS 13.1 and earlier.
+    func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+    
+    // For iOS 13.1 and earlier.
+    func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+    
+    @available(iOS 13.2, *)
+    // For iOS 13.2 and later.
+    func application(_ application: UIApplication, shouldSaveSecureApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+    
+    @available(iOS 13.2, *)
+    // For iOS 13.2 and later.
+    func application(_ application: UIApplication, shouldRestoreSecureApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+}

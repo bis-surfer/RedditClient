@@ -23,6 +23,8 @@
 		094160D0255A371600E94FF7 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160CF255A371600E94FF7 /* FooterView.swift */; };
 		094160E0255AF09600E94FF7 /* BasicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160DF255AF09600E94FF7 /* BasicInteractor.swift */; };
 		094160E3255AF39800E94FF7 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160E2255AF39800E94FF7 /* DetailInteractor.swift */; };
+		094160E7255B523D00E94FF7 /* EntriesViewController+StateRestoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160E6255B523D00E94FF7 /* EntriesViewController+StateRestoration.swift */; };
+		094160EA255B574500E94FF7 /* DetailViewController+StateRestoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094160E9255B574500E94FF7 /* DetailViewController+StateRestoration.swift */; };
 		09D4A1192556B03500908BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A1182556B03500908BBC /* AppDelegate.swift */; };
 		09D4A11B2556B03500908BBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A11A2556B03500908BBC /* SceneDelegate.swift */; };
 		09D4A11D2556B03500908BBC /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4A11C2556B03500908BBC /* EntriesViewController.swift */; };
@@ -50,6 +52,8 @@
 		094160CF255A371600E94FF7 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		094160DF255AF09600E94FF7 /* BasicInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInteractor.swift; sourceTree = "<group>"; };
 		094160E2255AF39800E94FF7 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		094160E6255B523D00E94FF7 /* EntriesViewController+StateRestoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntriesViewController+StateRestoration.swift"; sourceTree = "<group>"; };
+		094160E9255B574500E94FF7 /* DetailViewController+StateRestoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+StateRestoration.swift"; sourceTree = "<group>"; };
 		09D4A1152556B03500908BBC /* RedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D4A1182556B03500908BBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D4A11A2556B03500908BBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				09D4A11C2556B03500908BBC /* EntriesViewController.swift */,
 				0941609B255715E900E94FF7 /* EntriesViewController+UITableViewDataSource.swift */,
 				43006D702559D3D400B6A748 /* EntriesViewController+UITableViewDelegate.swift */,
+				094160E6255B523D00E94FF7 /* EntriesViewController+StateRestoration.swift */,
 				094160812556F52B00E94FF7 /* EntryTableViewCell.swift */,
 				094160CF255A371600E94FF7 /* FooterView.swift */,
 				094160B32558394600E94FF7 /* EntriesInteractor.swift */,
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				43006D6D2559D13700B6A748 /* DetailViewController.swift */,
+				094160E9255B574500E94FF7 /* DetailViewController+StateRestoration.swift */,
 				094160E2255AF39800E94FF7 /* DetailInteractor.swift */,
 			);
 			path = "Detail Scene";
@@ -249,7 +255,9 @@
 				094160A82557533800E94FF7 /* EntriesPresenter.swift in Sources */,
 				094160C72558A10000E94FF7 /* Constants.swift in Sources */,
 				09D4A11D2556B03500908BBC /* EntriesViewController.swift in Sources */,
+				094160E7255B523D00E94FF7 /* EntriesViewController+StateRestoration.swift in Sources */,
 				43006D6E2559D13700B6A748 /* DetailViewController.swift in Sources */,
+				094160EA255B574500E94FF7 /* DetailViewController+StateRestoration.swift in Sources */,
 				094160C42558A01600E94FF7 /* ImageDownloadingOperation.swift in Sources */,
 				094160E3255AF39800E94FF7 /* DetailInteractor.swift in Sources */,
 				094160AF255826C400E94FF7 /* NetworkWorker.swift in Sources */,
