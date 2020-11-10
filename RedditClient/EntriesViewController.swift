@@ -32,7 +32,9 @@ class EntriesViewController: UIViewController {
         entriesPresenter = EntriesPresenter(withViewController: self, interactor: entriesInteractor)
         entriesInteractor.presenter = entriesPresenter
         
-        requestEntries()
+        setupRefreshControl()
+        
+        requestEntries(withTableViewHiding: true)
     }
     
     // MARK: - Navigation
@@ -52,12 +54,36 @@ class EntriesViewController: UIViewController {
     
     // MARK: - Private Methods
     //
-    private func requestEntries() {
+    private func requestEntries(withTableViewHiding hideTableView: Bool) {
         
-        activityIndicatorView.show()
-        entriesTableView.isHidden = true
+        if hideTableView {
+            activityIndicatorView.show()
+            entriesTableView.isHidden = true
+        }
         
         entriesInteractor.requestEntries()
+    }
+}
+
+
+// MARK: - UIRefreshControl setup/configuration
+
+extension EntriesViewController {
+    
+    private func setupRefreshControl() {
+       refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
+    @objc private func refresh() {
+        requestEntries(withTableViewHiding: false)
+    }
+    
+    private var refreshControl: UIRefreshControl {
+        guard let refreshControl = entriesTableView.refreshControl else {
+            entriesTableView.refreshControl = UIRefreshControl()
+            return entriesTableView.refreshControl!
+        }
+        return refreshControl
     }
 }
 
@@ -68,6 +94,7 @@ extension EntriesViewController: EntriesViewReloadable {
     
     func reload() {
         
+        refreshControl.endRefreshing()
         entriesTableView.reloadData()
         
         activityIndicatorView.hide()
