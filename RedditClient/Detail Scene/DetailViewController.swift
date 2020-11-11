@@ -37,7 +37,13 @@ extension DetailViewController {
     
     func setupPicture() {
         
-        detailInteractor.setupImageView(pictureView, withImageUrl: entry?.pictureUrl, defaultImage: nil, showPlaceholderBlock: { showImagePlaceholderView() }, hidePlaceholderBlock: { self.hideImagePlaceholderView() })
+        guard let pictureUrl = entry?.pictureUrl else {
+            
+            hideImagePlaceholderView()
+            return
+        }
+        
+        detailInteractor.setupImageView(pictureView, withImageUrl: pictureUrl, defaultImage: nil, showPlaceholderBlock: { showImagePlaceholderView() }, hidePlaceholderBlock: { self.hideImagePlaceholderView() })
     }
     
     func showImagePlaceholderView() {

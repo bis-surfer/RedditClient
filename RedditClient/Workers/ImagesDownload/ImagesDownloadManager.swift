@@ -72,7 +72,7 @@ class ImagesDownloadManager: NSObject {
                 
                 imageView.image = imageRecord!.image
             }
-            else {
+            else if imageRecord!.state == .downloading {
                 
                 showPlaceholderBlock()
                 
@@ -84,6 +84,10 @@ class ImagesDownloadManager: NSObject {
                         hidePlaceholderBlock()
                     })
                 })
+            }
+            else if (imageRecord!.state == .downloaded && imageRecord!.image == nil) || imageRecord!.state == .failed {
+                
+                hidePlaceholderBlock()
             }
         }
         else {

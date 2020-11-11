@@ -46,7 +46,6 @@ class ImageDownloadingOperation: Operation {
         }
         else {
             
-            imageRecord.state = .downloaded
             var image: UIImage? = UIImage(data:imageData, scale: 1.0)
             
             if image == nil {
@@ -61,6 +60,13 @@ class ImageDownloadingOperation: Operation {
                 }
             }
             
+            guard image != nil else {
+                
+                imageRecord.state = .failed
+                return
+            }
+            
+            imageRecord.state = .downloaded
             imageRecord.image = image
             
             NotificationCenter.default.post(name: NSNotification.Name(Constants.kImageWasDownloadedNotification), object: imageRecord)
